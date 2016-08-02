@@ -22,12 +22,15 @@ data _null_;
 run;
 
 *set latest version number and releases folder;
-%let version = 0.1.0.pre;
+%let version = 0.1.0.beta1;
 %let releases_folder = \\rfa01\bwh-sleepepi-home\projects\src\honolulu\nsrr-prep\_releases;
 
 *create 'haasa_nsrr' dataset from source dataset sent by coordinating center;
 data haasa_nsrr;
   set haasa.haasa_dcc;
+
+  *create exam variable;
+  exam = 7;
 run;
 
 *create permanent sas dataset;

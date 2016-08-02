@@ -1,0 +1,7 @@
+{
+  "id": "exam",
+  "display_name": "EXAM NUMBER",
+  "description": "",
+  "type": "choices",
+  "domain": "exam"
+}
