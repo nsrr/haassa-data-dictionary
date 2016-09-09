@@ -22,7 +22,7 @@ data _null_;
 run;
 
 *set latest version number and releases folder;
-%let version = 0.1.0.beta1;
+%let version = 0.1.0.rc;
 %let releases_folder = \\rfa01\bwh-sleepepi-home\projects\src\honolulu\nsrr-prep\_releases;
 
 *create 'haasa_nsrr' dataset from source dataset sent by coordinating center;
@@ -40,7 +40,7 @@ run;
 
 *export csv dataset;
 proc export data=haasa_nsrr
-  outfile="&releases_folder\&version\haasa_nsrr_&version..csv"
+  outfile="&releases_folder\&version\haasa-dataset-&version..csv"
   dbms=csv
   replace;
 run;
