@@ -22,7 +22,7 @@ data _null_;
 run;
 
 *set latest version number and releases folder;
-%let version = 0.1.0.rc;
+%let version = 0.1.0;
 %let releases_folder = \\rfa01\bwh-sleepepi-home\projects\src\honolulu\nsrr-prep\_releases;
 
 *create 'haassa_nsrr' dataset from source dataset sent by coordinating center;
