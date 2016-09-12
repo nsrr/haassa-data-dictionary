@@ -1,4 +1,4 @@
-## 0.1.0
+## 0.1.0 (September 12, 2016)
 
 - Add initial set of 10 variables
 - Add `exam` variable for Spout's use
