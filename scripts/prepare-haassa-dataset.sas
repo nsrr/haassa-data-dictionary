@@ -1,5 +1,5 @@
 **************************;
-*prepare-haasa-dataset.sas;
+*prepare-haassa-dataset.sas;
 **************************;
 
 /*
@@ -9,7 +9,7 @@ This program is used to prepare a CSV dataset for use on the National Sleep Rese
 */
 
 *set library and options;
-libname haasa "\\rfa01\bwh-sleepepi-home\projects\src\honolulu\nsrr-prep\_datasets";
+libname haassa "\\rfa01\bwh-sleepepi-home\projects\src\honolulu\nsrr-prep\_datasets";
 options nofmterr;
 
 *create macro date variables;
@@ -25,22 +25,22 @@ run;
 %let version = 0.1.0.rc;
 %let releases_folder = \\rfa01\bwh-sleepepi-home\projects\src\honolulu\nsrr-prep\_releases;
 
-*create 'haasa_nsrr' dataset from source dataset sent by coordinating center;
-data haasa_nsrr;
-  set haasa.haasa_dcc;
+*create 'haassa_nsrr' dataset from source dataset sent by coordinating center;
+data haassa_nsrr;
+  set haassa.haassa_dcc;
 
   *create exam variable;
   exam = 7;
 run;
 
 *create permanent sas dataset;
-data haasa.haasa_nsrr_&sasfiledate;
-  set haasa_nsrr;
+data haassa.haassa_nsrr_&sasfiledate;
+  set haassa_nsrr;
 run;
 
 *export csv dataset;
-proc export data=haasa_nsrr
-  outfile="&releases_folder\&version\haasa-dataset-&version..csv"
+proc export data=haassa_nsrr
+  outfile="&releases_folder\&version\haassa-dataset-&version..csv"
   dbms=csv
   replace;
 run;
